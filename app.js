@@ -34,7 +34,7 @@ playBtnElement.addEventListener("click", function (){
     // Aggiungo l'evento click ad ogni casella
     actualCell.addEventListener("click", function () {
       actualCell.classList.add("bg-azure");
-      console.log("La casella selezionata è la numero : " + n);
+      console.log(n);
     })
   }
 })
