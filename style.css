@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:#253F60;
+  color: white;
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+header .title {
+  margin-bottom: 20px;
+}
+
+header button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
