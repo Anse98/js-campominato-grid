@@ -12,6 +12,7 @@ body {
 
 header {
   text-align: center;
+  margin-bottom: 100px;
 }
 
 header .title {
@@ -30,4 +31,22 @@ header button {
 .container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border: solid 1px;
+  width:calc(100% / 10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-azure {
+  background-color: #86B3C4;
 }
