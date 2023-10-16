@@ -1,9 +1,13 @@
-//////////////////////////////////FUNZIONI/////////////////////////////
+
+
+//////////////////////////////////FUNZIONI//////////////////////////////////////
 
 
 // FUNZIONE PER GENERARE LA GRIGLIA IN BASE AL LIVELLO DI DIFFICOLTA
+
 function generateGrill() {
 
+  // Sostituisco il contenuto del button play
   playBtnElement.innerHTML = `Nuova partita <i class="fa-solid fa-rotate-right"></i>` ;
 
   // Cancello la griglia ogni volta che viene premuto il tasto gioca
@@ -14,21 +18,25 @@ function generateGrill() {
 
   if (selectElement.value === "f") {
 
-    difficultyEasy();
+    // Mi genera 49 caselle se la select è impostata su facile
+    generateGrillEasy();
 
   } else if (selectElement.value === "m") {
     {
-      difficultMedium();
+      // Mi genera 81 caselle se la select è impostata su medio
+      generateGrillMedium();
     }
   } else {
-    difficultHard ();
+    // Mi genera 100 caselle se la select è impostata su difficile
+    generateGrillHard ();
   }
 }
 
 // FUNZIONE CHE MI GENERA 49 CASELLE
-function difficultyEasy () {
 
-  for (let i = 0; i < 49; i++) {
+function generateGrillEasy () {
+  // Genero 49 volte le caselle
+  for (let i = 0; i < 100; i++) {
     const n = i + 1;
 
     //Creo la cella che dovrò stampare tot volte nel DOM
@@ -40,7 +48,8 @@ function difficultyEasy () {
 }
 
 // FUNZIONE CHE MI GENERA 81 CASELLE
-function difficultMedium () {
+
+function generateGrillMedium () {
   // Genero 81 volte le caselle
   for (let i = 0; i < 81; i++) {
     const n = i + 1;
@@ -54,9 +63,10 @@ function difficultMedium () {
 }
 
 // FUNZIONE CHE MI GENERA 100 CASELLE
-function difficultHard () {
+
+function generateGrillHard () {
   // Genero 100 volte le caselle
-  for (let i = 0; i <  100; i++) {
+  for (let i = 0; i < 49; i++) {
     const n = i + 1;
 
     //Creo la cella che dovrò stampare tot volte nel DOM
@@ -68,10 +78,12 @@ function difficultHard () {
 }
 
 // FUNZIONE PER DARE BG COLOR ALLE CELLE E CONSOLE LOG DEL NUMERO DELLE CELLE
+
 function addBgAndN () {
 
   // Vado a prendermi tutti gli elementi dal DOM con classe cell
   const cellElements = document.querySelectorAll(".cell");
+  console.log(cellElements.length);
 
   for (let i = 0; i < cellElements.length; i++) {
     const n = i + 1;
@@ -79,13 +91,14 @@ function addBgAndN () {
 
     // Aggiungo l'evento click ad ogni casella
     actualCell.addEventListener("click", function () {
-      actualCell.classList.add("bg-azure");
+      this.classList.add("bg-azure");
       console.log(n);
     })
   }
 }
 
-  /////////////////////////////FINE FUNZIONI//////////////////////////////////
+  /////////////////////////////FINE FUNZIONI////////////////////////////////////
+
 
   // Mi vado a prendere l'elemento del DOM che contiene le celle
   const gridElement = document.querySelector(".grid");
@@ -97,8 +110,9 @@ function addBgAndN () {
   playBtnElement.addEventListener("click", function () {
 
     generateGrill();
-    
+
     addBgAndN ();
+    
   })
 
 
